@@ -1,5 +1,5 @@
-(defproject contemporary-words "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
+(defproject contemporary-words "0.1.0"
+  :description "Picks n contemporary words at random"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
