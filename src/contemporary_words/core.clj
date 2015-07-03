@@ -1,7 +1,4 @@
-(ns contemporary-words.core
-  (:gen-class))
-
-(require 'clojure.string)
+(ns contemporary-words.core)
 
 (def words [
   "a" "ah" "am" "an" "as" "at" "be" "by" "do" "go" "ha"
@@ -360,20 +357,12 @@
   "unfortunately"])
 
 (let [l (count words)
-      secure-random (java.security.SecureRandom.)
-     ]
+      secure-random (java.security.SecureRandom.)]
   (defn random-word []
     (nth words (long (* l (.nextDouble secure-random))))
   )
 )
 
 (defn random-words
-  [n]
-  (repeatedly n random-word)
-)
-
-(defn -main
-  "I don't do a whole lot ... yet."
-  [n]
-  (println (clojure.string/join " " (random-words (Long. n))))
-)
+  ([n] (doall (repeatedly n random-word)))
+  ([n sep] (clojure.string/join sep (random-words n))))
